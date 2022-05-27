@@ -7,9 +7,13 @@ import {
     RssIcon,
 
 } from "@heroicons/react/outline";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 function Sidebar() {
+        const { data: session, status } = useSession();
+
+        console.log(session);
+
     return (
         <div className="text-gray-600 p-5 text-sm border-r border-gray-900">
             <div className="space-y-4">
